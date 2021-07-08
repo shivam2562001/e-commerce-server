@@ -102,6 +102,7 @@ router.post("/register", async (req, res) => {
       };
       smtpTransport.sendMail(mailOptions, (err) => {
         if (err) {
+          console.log(error)
           return res.status(400).json({
             error: "try again after sometime",
           });
